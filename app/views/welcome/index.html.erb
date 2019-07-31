@@ -13,7 +13,6 @@
       <article class="card card-warning text-center">
         <h1>
           <%= @posts.count %>
-          35
           <small>
             ARTICLES
           </small>
@@ -33,24 +32,6 @@
           REGISTERED
         </h4>
       </article>
-    </section>
-    <section class="dashboard-body">
-      <table>
-        <thead>
-          <tr>
-            <th>
-            
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @posts.each do |post| %>
-            <tr>
-              <td><%= link_to post.title, post %></td>
-            </tr>
-          <% end %>        
-        </tbody>
-      </table>
     </section>
   </main>
 </section>

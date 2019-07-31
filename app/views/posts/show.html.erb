@@ -1,5 +1,5 @@
 <% if notice %>  
-  <section class="js-toaster" aria-label="Toaster">
+  <section class="toaster js-toaster" aria-label="Toaster">
     <p class="notice">
       <%= notice %>
     </p>
@@ -40,7 +40,7 @@
         </ul>
       </section>
     <% end %>
-    <section>
+    <section aria-label="Article links" class="mb-2">
       <ul class="list-unstyled list-inline">
         <li>
           <%= link_to '← Back', posts_path, class:"btn btn-warning" %>

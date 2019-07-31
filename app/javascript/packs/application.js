@@ -15,3 +15,7 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+setTimeout(() => {
+  document.querySelector('.js-toaster').classList.add('hidden');
+}, 3000)
