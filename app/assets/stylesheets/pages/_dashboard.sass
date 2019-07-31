@@ -1,0 +1,76 @@
+.d-grid-dashboard
+  display: grid
+  grid-template-columns: minmax(auto, 300px) calc(100% - 300px)
+
+.sidebar
+  background-color: $dark
+  color: #fff
+  padding: 0.5rem 1.5rem
+  box-sizing: border-box
+
+.nav-sidebar
+  & ul
+    padding: 0
+  & ul > li > a
+    display: block
+    padding: 
+      top: 0.25rem 
+      bottom: 0.25rem
+    color: #fff
+
+.list-unstyled
+  list-style: none      
+
+.dashboard-head
+  display: grid
+  grid-template-columns: auto 1fr
+  align-items: center
+  border-bottom: 1px solid $gray
+
+.h-self-end
+  justify-self: end  
+
+.main
+  padding: 
+    right: 2rem
+    left: 2rem
+
+.dashboard-cards
+  display: grid
+  grid-template-columns: repeat(2, calc(90% / 2))
+  justify-content: space-between
+
+.radius-50
+  border-radius: 50%  
+
+.card
+  display: grid
+  align-content: center
+  height: 250px
+  padding: 1rem 1.5rem
+  box-sizing: border-box
+  border-radius: 0.5rem
+  color: #fff
+
+.card-warning
+  background-color: $warning
+
+.card-brown
+  background-color: $brown  
+
+.table-layout
+  display: block
+  padding: 1rem
+  box-sizing: border-box
+  border: 2px solid $gray  
+  border-radius: 0.25rem
+
+.table
+  width: 100%
+  text-align: left
+  border-collapse: collapse
+  & thead > tr > th
+    padding: 0.75rem 0.25rem
+  & > tbody > tr > td
+    padding: 0.5rem 0.25rem
+    border-top: 1px solid $gray

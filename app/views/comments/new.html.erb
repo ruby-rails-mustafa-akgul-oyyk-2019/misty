@@ -1,12 +1,25 @@
-<h1>Add Comment</h1>
-
-<%= form_for [@post, @comment] do |form| %>
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<section class="d-grid-dashboard vh-100">
+  <%= render '/shared/sidebar' %>
+  <main role="main" class="main">
+    <section class="dashboard-head mb-2">    
+      <h2>
+        Add comment
+      </h2>
+      <a href="/" class="h-self-end">
+        <%= image_tag 'https://secure.gravatar.com/avatar/2e9ed4a4f824520785e6562cfa37ac7d.png?d=retro&r=PG&s=50', class:'img-responsive radius-50' %>      
+      </a>
+    </section>
+    <section>
+      <%= form_for [@post, @comment] do |form| %>
+        <div class="form-group mb-1">
+          <%= form.label :content, 'What do you think about this article?' %>
+          <%= form.text_area :content, class: 'form-control', cols:"30", rows:"8" %>
+        </div>
+        <div class="btn-group">
+          <%= link_to 'Back', posts_path, class:'btn btn-block btn-outline' %>
+          <%= form.submit 'Publish', :class => 'btn btn-block btn-primary' %>
+        </div>
+      <% end %>
+    </section>
+  </main>
+</section>

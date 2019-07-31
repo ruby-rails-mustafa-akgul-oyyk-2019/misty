@@ -1,19 +1,56 @@
-<h1>Welcome to Misty</h1>
-<hr>
-<h2>Posts</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= link_to post.title, post %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<section class="d-grid-dashboard vh-100">
+  <%= render '/shared/sidebar' %>
+  <main role="main" class="main">
+    <section class="dashboard-head mb-2">    
+      <h2>
+        Overview
+      </h2>
+      <a href="/" class="h-self-end">
+        <%= image_tag 'https://secure.gravatar.com/avatar/2e9ed4a4f824520785e6562cfa37ac7d.png?d=retro&r=PG&s=50', class:'img-responsive radius-50' %>      
+      </a>
+    </section>
+    <section class="dashboard-cards">
+      <article class="card card-warning text-center">
+        <h1>
+          <%= @posts.count %>
+          35
+          <small>
+            ARTICLES
+          </small>
+        </h1>
+        <h4>
+          PUBLISHED
+        </h4>
+      </article>
+      <article class="card card-brown text-center">
+        <h1>
+          78
+          <small>
+            USERS
+          </small>
+        </h1>
+        <h4>
+          REGISTERED
+        </h4>
+      </article>
+    </section>
+    <section class="dashboard-body">
+      <table>
+        <thead>
+          <tr>
+            <th>
+            
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @posts.each do |post| %>
+            <tr>
+              <td><%= link_to post.title, post %></td>
+            </tr>
+          <% end %>        
+        </tbody>
+      </table>
+    </section>
+  </main>
+</section>
