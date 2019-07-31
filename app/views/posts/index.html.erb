@@ -29,19 +29,22 @@
                 <th>
                   Is Published
                 </th>
+                <th>
+                  Create at
+                </th>
                 <th class="text-right">
                   Actions
                 </th>
               </tr>
             </thead>
             <tbody>
-              <% @posts.each do |post| %>
+              <% @posts.each_with_index do |post, index| %>
               <tr>
                 <td>
-                  1
+                  <%= index + 1 %>
                 </td>
                 <td>
-                <%= link_to post.title, post, class:'btn-link' %>
+                  <%= link_to post.title, post, class:'btn-link' %>
                 </td>
                 <td>
                   <% if post.published.nil? %>
@@ -53,6 +56,10 @@
                       &check;
                     </span>
                   <% end %>
+                </td>
+                <td>
+                  <%= distance_of_time_in_words(post.created_at, Time.now)%>
+                  ago
                 </td>
                 <td class="text-right">
                   <%= link_to edit_post_path(post), class:"btn btn-sm btn-action btn-edit" do %>
@@ -67,7 +74,7 @@
             </tbody>
           </table>          
         <% else %>
-          <div class="text-center">          
+          <div aria-label="There is no record" class="text-center">          
             <h3>
               There is no record yet!
             </h3>
